@@ -74,7 +74,33 @@ const double *const pip = &pi; // pip is a const pointer to a const object
 ```
 ```const``` pointer is not allowed to change the object it points to.
 
-## ```constexpr``` constant expression
+## ```constexpr``` constant expression (Cpp 11 feature)
 an expression whose value cannot change and that can be evaluated at compile time.
+Variables declared as ```constexpr``` are implicitly ```const``` andmust be initialized by constant expressions:
+```cpp
+constexpr int mf = 20; // 20 is a constant expression
+int mf = 20; // NOT OK, because mf is not const but used to initialize limit below
+constexpr int limit = mf + 1; // mf + 1 is a constant expression
+constexpr int sz = size(); // ok only if size is a constexpr function
+```
+- __pointers and ```constexpr```__
+```cpp
+const int *p = nullptr; // p is a pointer to a const int
+constexpr int *q = nullptr; // q is a const pointer to int
+constexpr const int *p = &i; // p is a constant pointer to the const int i
+```
 
+## Type alias
+1. traditional way, using ```typedef```
+```cpp
+typedef double wages; // wages is a synonym for double
+typedef wages base, *p; // base is a synonym for double, p for double*
+```
+2. Cpp 11 new way, __alias declaration__
+```cpp
+using SI = Sales_item; // SI is a synonym for Sales_item
+SI item; // same as Sales_item item
+```
+_However using alias and ```const``` may yield confusing declaration._
 
+## ```auto``` type specifier
