@@ -64,6 +64,10 @@ however in this case, if we modify ```dval``` value, ```ri``` will not be affece
 **Similarly for pointers, Pointer to ```const``` can be used to point to non-```const``` object**
 2. 
 
+## top-level and lower -level ```const```
+__top-level__ ```const```: the __pointer__ itself is a ```const```. 
+__lower-level__ ```const```: the __object__ that pointer refers to is a ```const```.
+
 ## ```const``` pointer
 - pointer is object, unlike reference which is a _name, or **alias**, to an existing object_.
 ```cpp
@@ -104,3 +108,10 @@ SI item; // same as Sales_item item
 _However using alias and ```const``` may yield confusing declaration._
 
 ## ```auto``` type specifier
+cpp11 feature
+
+## preprocessor
+- Preprocessor variables have one of two possible states: defined or not defined.
+- ```##ifndef```, ```#define```, ```#endif``` are preprocessor directives
+- When the preprocessor sees a #include, it replaces the ```#include``` with the contents of
+the specified header.
