@@ -111,7 +111,33 @@ _However using alias and ```const``` may yield confusing declaration._
 cpp11 feature
 
 ## preprocessor
-- Preprocessor variables have one of two possible states: defined or not defined.
+- Preprocessor variables have one of two possible states: defined or not defined. It is normally in uppercase, like ```SALES_DATA_H```
 - ```##ifndef```, ```#define```, ```#endif``` are preprocessor directives
 - When the preprocessor sees a #include, it replaces the ```#include``` with the contents of
 the specified header.
+
+## initialization
+- __default initialization:__ ```string s1```, where for string class, the default value is empty. for other object, depends on the class design.
+- __direct initialization:__ ```string s2(s1)```, without ```=```， copy the value of s1 s2
+- __copy initialization:__ ```string s3 = s2```, using ```=```
+
+## example of using Template
+```cpp
+template <class T1, class T2>
+void myPrint (T1 a, T2 b) {
+    cout << a << endl;
+    cout << b << endl;
+}
+  
+int main() {
+  myPrint<int,string>(1,"test");
+  myPrint<char,double>('a',1.01);
+  return 0;
+}
+```
+
+## Complexity
+- __big Theta__
+- __big O__
+- __big Omega__
+
