@@ -141,3 +141,8 @@ int main() {
 - __big O__
 - __big Omega__
 
+## Template to be defined in header
+https://stackoverflow.com/questions/495021/why-can-templates-only-be-implemented-in-the-header-file
+https://stackoverflow.com/questions/3040480/c-template-function-compiles-in-header-but-not-implementation
+https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl
+
