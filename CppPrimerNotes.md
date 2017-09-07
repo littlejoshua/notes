@@ -13,6 +13,16 @@ cout << &a << " " << &ra << endl; // both a and ra have the same address
 ```
 
 https://liam0205.me/2017/02/05/pointer-in-C-and-Cpp/
+
+Example: (of passing by reference/by pointer)
+```func(SPRITE *x);```
+with a call of
+```func(&mySprite);```
+**vs.**
+```func(SPRITE &x);```
+with a call of
+```func(mySprite);```
+
 ## declare and define
 A __declaration__ makes a name known to the program. A file that wants to use a name defined elsewhere includes a declaration for that name. A __definition__ creates the associated entity.
 
@@ -145,4 +155,5 @@ int main() {
 https://stackoverflow.com/questions/495021/why-can-templates-only-be-implemented-in-the-header-file
 https://stackoverflow.com/questions/3040480/c-template-function-compiles-in-header-but-not-implementation
 https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl
-
+https://stackoverflow.com/questions/4445654/multiple-definition-of-template-specialization-when-using-different-objects
+http://www.cs.technion.ac.il/users/yechiel/c++-faq/template-specialization.html
